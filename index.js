@@ -39,10 +39,6 @@ io.on('connection', (socket) => {
 	socket.emit("setPseudo", {pseudo : socket.id});
 	console.log('CONNECTED ' + socket.id);
 	socket.on("createGame", (mode, callback) => {
-		if(U.GetUser(socket).pseudo == socket.id){
-			callback(false);
-			return;
-		}
 		callback(G.CreateGame(U.GetUser(socket), mode))
 	})
 	socket.on('disconnect', (reason) => {
