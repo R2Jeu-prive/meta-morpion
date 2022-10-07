@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Meta Morpion</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://cdn.socket.io/4.4.1/socket.io.min.js" integrity="sha384-fKnu0iswBIqkjxrhQCTZ7qlLHOFEgNkRmK2vaO/LbTZSXdJfAu6ewRBdwHPhBo/H" crossorigin="anonymous"></script>
+	<script>
+		const socket = io();
+	</script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+	<script src="/js"></script>
+	<link rel="stylesheet" href="css">
+</head>
+<body>
+	<div class="screen" id="main-screen">
+        <div class="start-of-page"></div>
+		<h1 class="title">Meta # Morpion</h1>
+        <button class="create-game blue-button">Partie Locale</button>
+        <button class="create-game blue-button">Contre le BOT</button>
+        <div class="line"></div>
+		<div class="hori">
+			<input class="gametag" type="text" oninput="this.value = this.value.toUpperCase().substring(0,3)" placeholder="TAG"/>
+			<button class="join-game blue-button">Rejoindre</button>
+		</div>
+		<button class="create-game blue-button">Créer Mon Lobby</button>
+        <div class="end-of-page"></div>
+		<link rel="stylesheet" href="css/main">
+		<script src="/js/main"></script>
+	</div>
+    <div class="screen hidden-screen" id="loading-screen">
+        <div class="start-of-page"></div>
+        <!--
+            https://loading.io/css/
+        -->
+        <div class="lds-default"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        <div class="end-of-page"></div>
+        <link rel="stylesheet" href="css/loading">
+		<script src="/js/loading"></script>
+    </div>
+    <div class="screen hidden-screen" id="error-screen">
+        <div class="start-of-page"></div>
+        <p class="message">Une erreur s'est produite</p>
+        <button class="back blue-button">Menu Principale</button>
+        <div class="end-of-page"></div>
+        <link rel="stylesheet" href="css/error">
+        <script src="/js/error"></script>
+    </div>
+    <div class="screen hidden-screen" id="error-screen">
+        <div class="start-of-page"></div>
+        <div class="end-of-page"></div>
+        <link rel="stylesheet" href="css/game">
+        <script src="/js/game"></script>
+    </div>
+</body>
+<footer>
+    <link rel="stylesheet" href="css/phone">
+</footer>
+</html>
