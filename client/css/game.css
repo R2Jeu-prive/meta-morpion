@@ -31,3 +31,14 @@
     border-radius: 11%;
     background-color: #ffffff10;
 }
+
+#game-screen .circle{
+    filter: drop-shadow(2px 2px 0px #00000030);
+}
+#game-screen .circle circle{
+    transition: stroke-dashoffset 1s;
+}
+#game-screen .circle circle.animate{
+    transition: stroke-dashoffset 1s;
+    stroke-dashoffset: 0;
+}
