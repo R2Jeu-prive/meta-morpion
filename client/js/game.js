@@ -16,7 +16,7 @@ function initGrid(){
             grid[x].push(0);
             updateGrid(x, y, Math.floor(Math.random()*3));
 
-            let sector = 3*Math.floor(x/3) + Math.floor(y/3);
+            let sector = sectorNames[3*Math.floor(x/3) + Math.floor(y/3)];
             $("game-screen ." + sector).append('<div class="' + x + "" + y + '">');
         }
     }
