@@ -20,6 +20,6 @@ function initGrid(){
 }
 
 function updateGrid(x, y, val){
-    grid[i][j] = val;
+    grid[x][y] = val;
     //animate;
 }
