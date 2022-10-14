@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
 });
 
 grid = [];
@@ -26,6 +27,10 @@ function initGrid(){
             $("#game-screen ." + sector).append('<div class="' + x + "" + y + ' cells">');
         }
     }
+
+    $("#game-screen .cells").on( "click", function() {
+        console.log($(this).attr("class").slice(0,2));
+    });
 }
 
 function updateGrid(x, y, val){
