@@ -2,7 +2,7 @@ $(document).ready(function() {
     $("#main-screen .create-game").on("click", function(){
         $("#main-screen").addClass("hidden-screen");
         $("#game-screen").removeClass("hidden-screen");
-        test();
+        initGrid();
 	});
 	$("#main-screen .join-game").on("click", function(){
 		/*let joinTag = $("#main-screen .gametag").val();
