@@ -14,7 +14,7 @@ function initGrid(){
         grid.push([]);
         for (let j = 0; j < 9; j++) {
             grid[i].push(0);
-            updateGrid(i, j, Math.randomInt(0,3));
+            updateGrid(i, j, Math.floor(Math.random()*3));
         }
     }
 }
