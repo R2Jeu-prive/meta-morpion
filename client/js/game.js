@@ -30,9 +30,9 @@ function initGrid(){
         for (let y = 0; y < 9; y++) {
             let sector = sectorNames[3*Math.floor(x/3) + Math.floor(y/3)];
             $("#game-screen ." + sector).append('<div class="' + x + "" + y + ' cells"></div>');
-            
+            $("#game-screen ." + x + "" + y).append('<svg class="circle" width="100%" height="100%"><circle cx="50%" cy="50%" r="30%" stroke="blue" stroke-width="10%" fill="#00000000" pathLength="100" stroke-linecap="round" stroke-dasharray="100" stroke-dashoffset="100"></circle></svg>');
+
             grid[x].push(0);
-            updateGrid(x, y, Math.floor(Math.random()*3));
         }
     }
 
@@ -50,11 +50,10 @@ function updateGrid(x, y, val){
     //animate
     if(val == 0){return;}
     if(val == 1){
-        $(id).append('<svg class="circle" width="100%" height="100%"><circle cx="50%" cy="50%" r="30%" stroke="blue" stroke-width="10%" fill="#00000000" pathLength="100" stroke-linecap="round" class="test" stroke-dasharray="100" stroke-dashoffset="100"></circle></svg>');
-        $(id + " circle").addClass("animate");
+        $(id + " .circle circle").addClass("animate");
     }
 }
 
-function processClick(){
-
+function processClick(x,y){
+    updateGrid(x, y, 1);
 }
