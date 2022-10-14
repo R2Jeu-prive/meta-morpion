@@ -1,14 +1,10 @@
+const { default: test } = require("node:test");
+
 $(document).ready(function() {
     $("#main-screen .create-game").on("click", function(){
         $("#main-screen").addClass("hidden-screen");
-        $("#loading-screen").removeClass("hidden-screen");
-        socket.emit("createGame", "local", (created) => {
-            if(!created){
-                $("#loading-screen").addClass("hidden-screen");
-                $("#error-screen .message").text("Impossible de créer une partie pour le moment");
-                $("#error-screen").removeClass("hidden-screen");
-            }
-        })
+        $("#game-screen").removeClass("hidden-screen");
+        test();
 	});
 	$("#main-screen .join-game").on("click", function(){
 		/*let joinTag = $("#main-screen .gametag").val();

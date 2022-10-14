@@ -1,16 +1,21 @@
+const { Socket } = require("dgram");
+
 let games = [];
 
 class Game{
 	constructor(hostUser, mode){
 		this.host = hostUser;
         this.mode = mode;
-        this.opponent;
+        this.opponent = false;
 		this.tag = GenerateTag();
-        this.moves = [];
 	}
 
     Start(){
+        this.RefreshGameScreen();
+    }
 
+    RefreshGameScreen(){
+        this.host.socket.emit("refreshGame");
     }
 }
 
