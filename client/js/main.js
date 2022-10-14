@@ -1,5 +1,3 @@
-const { default: test } = require("node:test");
-
 $(document).ready(function() {
     $("#main-screen .create-game").on("click", function(){
         $("#main-screen").addClass("hidden-screen");
