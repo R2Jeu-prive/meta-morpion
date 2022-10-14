@@ -3,7 +3,7 @@ $(document).ready(function() {
 });
 
 grid = [];
-availableSector;
+availableSector = -1;
 sectorWins = [];
 
 function initGrid(){
