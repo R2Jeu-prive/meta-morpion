@@ -33,7 +33,7 @@
     position: relative;
 }
 
-#game-screen .svg{
+#game-screen .cells svg{
     filter: drop-shadow(2px 2px 0px #00000030);
     position: absolute;
 }
@@ -45,16 +45,16 @@
     stroke-dashoffset: 0;
 }
 #game-screen .cross line{
-    transition: stroke-dashoffset 1s;
+    transition: stroke-dashoffset .5s;
 }
 #game-screen .cross line.later{
-    transition: stroke-dashoffset 1s .5s;
+    transition: stroke-dashoffset .5s .5s;
 }
 #game-screen .cross line.animate{
-    transition: stroke-dashoffset 1s;
+    transition: stroke-dashoffset .5s;
     stroke-dashoffset: 0;
 }
 #game-screen .cross line.animate.later{
-    transition: stroke-dashoffset 1s .5s;
+    transition: stroke-dashoffset .5s .5s;
     stroke-dashoffset: 0;
 }
