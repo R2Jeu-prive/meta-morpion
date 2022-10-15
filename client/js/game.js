@@ -5,19 +5,29 @@ $(document).ready(function() {
 grid = [];
 availableSector = -1;
 sectorWins = [];
+moveCount = 0;
 
 function initGrid(){
     //clear
     $("#game-screen .grid").html("");
 
+    //GRID LAYOUT
     /*    x->
       y  A  D  G
       |  B  E  H
       V  C  F  I
     */
 
+    //SECTORWINS
+    /* 0 1 2 -> vertical triplets from left to right
+       3 4 5 -> horizontal triplets from top to bottom
+       6 -> \ diag
+       7 -> / diag
+    */
+
     //sectors
     availableSector = -1;
+    moveCount = 0;
     let sectorNames = ["a","b","c","d","e","f","g","h","i"];
     for (let i = 0; i < 9; i++) {
         sectorWins.push(0);
@@ -57,5 +67,14 @@ function updateGrid(x, y, val){
 }
 
 function processClick(x,y){
-    updateGrid(x, y, 2);
+    updateGrid(x, y, 1 + (moveCount%2));
+    moveCount += 1;
+
+    checkSectorWin(x,y);
+}
+
+function checkSectorWin(x,y){
+    if(x % 3 == 1 && y % 3 == 1){
+        //center of sector got clicked
+    }
 }
