@@ -6,6 +6,7 @@ grid = [];
 availableSector = -1;
 sectorWins = [];
 moveCount = 0;
+sectorNames = ["a","b","c","d","e","f","g","h","i"];
 
 function initGrid(){
     //clear
@@ -28,7 +29,6 @@ function initGrid(){
     //sectors
     availableSector = -1;
     moveCount = 0;
-    let sectorNames = ["a","b","c","d","e","f","g","h","i"];
     for (let i = 0; i < 9; i++) {
         sectorWins.push(0);
         $("#game-screen .grid").append('<div class="' + sectorNames[i] + ' sectors"></div>');
