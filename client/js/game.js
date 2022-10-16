@@ -35,9 +35,9 @@ function initGrid(){
     }
 
     //cells
-    for (let y = 0; y < 9; y++) {
+    for (let x = 0; x < 9; x++) {
         grid.push([]);
-        for (let x = 0; x < 9; x++) {
+        for (let y = 0; y < 9; y++) {
             let sector = sectorNames[3*Math.floor(y/3) + Math.floor(x/3)];
             $("#game-screen ." + sector).append('<div class="' + x + "" + y + ' cells"></div>');
             $("#game-screen ." + x + "" + y).append('<svg class="circle" width="100%" height="100%"><circle cx="50%" cy="50%" r="30%" stroke="blue" stroke-width="10%" fill="#00000000" pathLength="100" stroke-linecap="round" stroke-dasharray="100" stroke-dashoffset="100"></circle></svg>');
