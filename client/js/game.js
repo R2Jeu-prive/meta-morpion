@@ -66,11 +66,39 @@ function updateGrid(x, y, val){
     }
 }
 
+function updateSectorVisuals(){
+    for (let i = 0; i < 9; i++) {
+        if(availableSector == i || availableSector == -1){
+            $("#game-screen ." + sectorNames[i] + " .cells").addClass("highlighted");
+        }else{
+            $("#game-screen ." + sectorNames[i] + " .cells").removeClass("highlighted");
+        }
+    }
+}
+
 function processClick(x,y){
+    if(grid[x][y] != 0){return;}
+    if(3*Math.floor(x/3) + Math.floor(y/3) != availableSector && availableSector != -1){return;}
     updateGrid(x, y, 1 + (moveCount%2));
     moveCount += 1;
+    availableSector = 3 * (x%3) + (y%3);
+    if(sectorIsFull(availableSector)){availableSector = -1;}
+    updateSectorVisuals();
 
     checkSectorWin(x,y);
+}
+
+function sectorIsFull(id){
+    let x = 3 * Math.floor(id/3);
+    let y = 3 * (id%3);
+    for (let dx = 0; dx < 3; dx++) {
+        for (let dy = 0; dy <3; dy++) {
+            if(grid[x+dx][y+dy] == 0){
+                return false;
+            }
+        }
+    }
+    return true;
 }
 
 function checkSectorWin(x,y){

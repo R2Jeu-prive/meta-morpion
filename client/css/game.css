@@ -30,7 +30,13 @@
     height: 30%;
     border-radius: 11%;
     background-color: #ffffff10;
+    transition: background-color .2s;
     position: relative;
+}
+
+#game-screen .cells.highlighted{
+    background-color: #ffffff30;
+    transition: background-color .2s;
 }
 
 #game-screen .cells svg{
