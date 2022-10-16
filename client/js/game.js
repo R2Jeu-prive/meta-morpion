@@ -77,6 +77,7 @@ function updateSectorVisuals(){
 }
 
 function processClick(x,y){
+    console.log("clicked",x,y);
     if(grid[x][y] != 0){return;}
     if(3*Math.floor(x/3) + Math.floor(y/3) != availableSector && availableSector != -1){return;}
     updateGrid(x, y, 1 + (moveCount%2));
