@@ -73,9 +73,9 @@ function updateAvailableCells(){
                     let x = 3*(i/3) + dx;
                     let y = 3*(i%3) + dy;
                     if(grid[x][y] == 0){
-                        $("#game-screen .cells." + x + y).addClass("highlighted");
+                        $("#game-screen .cells." + x + "" + y).addClass("highlighted");
                     }else{
-                        $("#game-screen .cells." + x + y).removeClass("highlighted");
+                        $("#game-screen .cells." + x + "" + y).removeClass("highlighted");
                     }
                 }
             }
