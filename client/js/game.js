@@ -68,8 +68,10 @@ function updateGrid(x, y, val){
 function updateAvailableCells(){
     for (let i = 0; i < 9; i++) {
         if(availableSector == i || availableSector == -1){
-            for (let x = 0; x < 3; x++) {
-                for (let y = 0; y < 3; y++) {
+            for (let dx = 0; dx < 3; dx++) {
+                for (let dy = 0; dy < 3; dy++) {
+                    let x = 3*(i/3) + dx;
+                    let y = 3*(i%3) + dy;
                     if(grid[x][y] == 0){
                         $("#game-screen .cells." + x + y).addClass("highlighted");
                     }else{
