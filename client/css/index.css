@@ -6,7 +6,7 @@ body{
     left: 0px;
     height: 100%;
     width: 100%;
-    background-color: cornflowerblue;
+    background-color: #2a2a2a;
 }
 
 .screen{
@@ -39,7 +39,7 @@ body{
 }
 
 .blue-button{
-    background-color: #1C4187;
+    background-color: #4a4a4a;
     border: none;
     cursor: pointer;
     margin: 5px;
@@ -54,7 +54,7 @@ body{
 }
 
 .blue-button:hover{
-    background-color: #2352a9;
+    background-color: #525252;
     transition : background-color .1s;
 }
 
