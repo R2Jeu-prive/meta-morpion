@@ -70,7 +70,7 @@ function updateAvailableCells(){
         if(availableSector == i || availableSector == -1){
             for (let dx = 0; dx < 3; dx++) {
                 for (let dy = 0; dy < 3; dy++) {
-                    let x = 3*(i/3) + dx;
+                    let x = 3*(Math.floor(i/3)) + dx;
                     let y = 3*(i%3) + dy;
                     if(grid[x][y] == 0){
                         $("#game-screen .cells." + x + "" + y).addClass("highlighted");
