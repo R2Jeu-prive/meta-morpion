@@ -65,10 +65,18 @@ function updateGrid(x, y, val){
     }
 }
 
-function updateSectorVisuals(){
+function updateAvailableCells(){
     for (let i = 0; i < 9; i++) {
         if(availableSector == i || availableSector == -1){
-            $("#game-screen ." + sectorNames[i] + " .cells").addClass("highlighted");
+            for (let x = 0; x < 3; x++) {
+                for (let y = 0; y < 3; y++) {
+                    if(grid[x][y] == 0){
+                        $("#game-screen .cells." + x + y).addClass("highlighted");
+                    }else{
+                        $("#game-screen .cells." + x + y).removeClass("highlighted");
+                    }
+                }
+            }
         }else{
             $("#game-screen ." + sectorNames[i] + " .cells").removeClass("highlighted");
         }
@@ -83,7 +91,7 @@ function processClick(x,y){
     moveCount += 1;
     availableSector = 3 * (x%3) + (y%3);
     if(sectorIsFull(availableSector)){availableSector = -1;}
-    updateSectorVisuals();
+    updateAvailableCells();
 
     checkSectorWin(x,y);
 }
